@@ -1,18 +1,33 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
 import Logo from "../../public/Header-img/logo.svg";
 import personalImg from "../assets/da5cdb1a76e0fe3a324be8c07003297e.png";
 const Header = () => {
-  const data: string[] = [
-    "./Header-img/icon-nav-home.svg",
-    "./Header-img/icon-nav-movies.svg",
-    "./Header-img/icon-nav-tv-series.svg",
-    "./Header-img/icon-nav-bookmark.svg",
-  ];
+  // const data: string[] = [
+  //   "./Header-img/icon-nav-home.svg",
+  //   "./Header-img/icon-nav-movies.svg",
+  //   "./Header-img/icon-nav-tv-series.svg",
+  //   "./Header-img/icon-nav-bookmark.svg",
+  // ];
+  const navArr: string[] = ["home", "movies", "tv-series", "bookmarks"];
   return (
     <Wrapper>
       <div>
         <img src={Logo} alt="" />
-        <NavContainer>
+        <nav>
+          <ul>
+            {navArr.map((page, index) => {
+              return (
+                <Link to={`/${page}`} key={index}>
+                  <li>{page}</li>
+                </Link>
+              );
+            })}
+          </ul>
+        </nav>
+        {/* <nav>
+          <NavContainer>
           {data.map((item) => {
             return (
               <div key={item}>
@@ -21,6 +36,7 @@ const Header = () => {
             );
           })}
         </NavContainer>
+        </nav> */}
       </div>
 
       <PersonalImgC>

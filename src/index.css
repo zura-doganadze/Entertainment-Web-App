@@ -6,7 +6,7 @@
 }
 body {
   width: 100%;
-  background: var(--Dark-Blue, #10141e);
+  /* background: var(--Dark-Blue, #10141e); */
   text-align: center;
   font-family: "Outfit", sans-serif;
 }
