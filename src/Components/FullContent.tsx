@@ -2,16 +2,9 @@ import Header from "./Header";
 import { useParams } from "react-router-dom";
 import Movies from "./Movies";
 
-interface Movie {
-  title: string;
-  category: string;
-  isBookmarked: boolean;
-  isTrending: boolean;
-}
-
 interface FullContentProps {
-  children: React.ReactNode; // Use React.ReactNode for children
-  movies: Movie[];
+  children: React.ReactNode;
+  movies: TMovie[];
 }
 
 const FullContent = ({ children, movies }: FullContentProps) => {
@@ -21,12 +14,12 @@ const FullContent = ({ children, movies }: FullContentProps) => {
     filmNav === "home"
       ? movies
       : filmNav === "movies"
-      ? movies.filter((movie) => movie.category === "Movie")
+      ? movies.filter((movie: TMovie) => movie.category === "Movie")
       : filmNav === "tv-servies"
-      ? movies.filter((movie) => movie.category === "TV Series")
+      ? movies.filter((movie: TMovie) => movie.category === "TV Series")
       : filmNav === "bookmarks"
-      ? movies.filter((movie) => movie.isBookmarked)
-      : [];
+      ? movies.filter((movie: TMovie) => movie.isBookmarked)
+      : null;
 
   return (
     <div>

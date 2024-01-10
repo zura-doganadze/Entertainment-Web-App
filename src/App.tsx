@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import FullContent from "./Components/FullContent";
@@ -7,19 +7,17 @@ import FullContent from "./Components/FullContent";
 import data from "./data.json";
 import Trending from "./Components/Trending";
 
-// Define an interface for the movie
-interface Movie {
-  title: string;
-  category: string;
-  isBookmarked: boolean;
-  isTrending: boolean;
- 
-  // Add other properties as needed
-}
-
 function App() {
-  const [movies, setMovies] = useState<Movie[]>(data);
+  const [movies, setMovies] = useState<TMovie[]>(data);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (localStorage.getItem("logined") === "true") {
+      navigate("/home");
+    } else {
+      navigate("/login")
+    }
+   }, []);
   return (
     <Routes>
       <Route path="/login" element={<Login />}></Route>
@@ -28,7 +26,7 @@ function App() {
         path="/:filmNav"
         element={
           <FullContent movies={movies}>
-            <Trending movies={movies} />{" "}
+            <Trending movies={movies} />
           </FullContent>
         }
       ></Route>
