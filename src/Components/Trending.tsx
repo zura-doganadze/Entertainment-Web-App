@@ -1,8 +1,7 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+
 import MoviesImg from "/assets/icon-nav-movies.svg";
 import seriesImg from "/assets/icon-nav-tv-series.svg";
-
-//img
 import SaveFalseIcon from "../assets/Trending-img/SaveFalse-icon.png";
 import SaveTrueIcon from "../assets/Trending-img/SaveTrue-icon.png";
 function Trending({ movies }: { movies: TMovie[] }) {
@@ -58,12 +57,11 @@ const Main = styled.div`
     letter-spacing: -0.5px;
   }
 `;
- 
 
 const MoviesWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 100vw;  
+  max-width: 100vw;
   overflow-x: hidden;
   column-gap: 40px;
 `;
