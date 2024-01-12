@@ -62,14 +62,17 @@ const Wrapper = styled.div`
   img {
     cursor: pointer;
   }
+  font-size: 22px;
+  color: red;
+  
 `;
 
-const NavContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 28px;
-  margin-top: 74px;
-`;
+// const NavContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   row-gap: 28px;
+//   margin-top: 74px;
+// `;
 const PersonalImgC = styled.div`
   img {
     max-width: 40px;

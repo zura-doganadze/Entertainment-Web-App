@@ -2,6 +2,8 @@ import Header from "./Header";
 import { useParams } from "react-router-dom";
 import Movies from "./Movies";
 
+import styled from "styled-components";
+
 interface FullContentProps {
   children: React.ReactNode;
   movies: TMovie[];
@@ -22,12 +24,23 @@ const FullContent = ({ children, movies }: FullContentProps) => {
       : null;
 
   return (
-    <div>
+    <Main>
       <Header />
-      {filmNav === "home" ? children : null}
-      <Movies filteredMovies={filteredMovies} />
-    </div>
+      <ContentWrapper>
+        {filmNav === "home" ? children : null}
+        <Movies filteredMovies={filteredMovies} />
+      </ContentWrapper>
+    </Main>
   );
 };
 
 export default FullContent;
+
+const Main = styled.div`
+  display: flex;
+`;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+`;

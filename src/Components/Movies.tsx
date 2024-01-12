@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 function Movies({ filteredMovies }: { filteredMovies: TMovie[] | null }) {
   const navigate = useNavigate();
   return (
-    <div>
+    <Main>
       {filteredMovies?.map((movie: TMovie, index: number) => {
         return <h2 key={index}>{movie.title}</h2>;
       })}
@@ -12,9 +13,15 @@ function Movies({ filteredMovies }: { filteredMovies: TMovie[] | null }) {
           localStorage.setItem("logined", JSON.stringify(false));
           navigate("/login");
         }}
-      >logut</button>
-    </div>
+      >
+        logut
+      </button>
+    </Main>
   );
 }
 
 export default Movies;
+
+const Main = styled.div`
+  display: flex;
+`;
