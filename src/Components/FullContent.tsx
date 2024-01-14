@@ -42,5 +42,6 @@ const Main = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  width: 100%;
+  margin-right: 40px;
 `;

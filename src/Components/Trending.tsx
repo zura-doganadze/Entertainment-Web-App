@@ -10,7 +10,7 @@ function Trending({ movies }: { movies: TMovie[] }) {
 
   return (
     <Main>
-      <h1>trending</h1>
+      <h1>Trending</h1>
       <MoviesWrapper>
         {trendingMovies.map((movie: TMovie, index: number) => {
           return (
@@ -49,12 +49,13 @@ export default Trending;
 const Main = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 35px;
+  margin: 35px 0 20px 0;
   align-items: start;
   h1 {
     color: var(--Pure-White, #fff);
     font-size: 32px;
     letter-spacing: -0.5px;
+    margin-bottom: 25px;
   }
 `;
 
