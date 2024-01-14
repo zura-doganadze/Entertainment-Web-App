@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Logo from "../../public/Header-img/logo.svg";

@@ -9,7 +9,7 @@ body {
   background: var(--Dark-Blue, #10141e);
   text-align: center;
   font-family: "Outfit", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 :root {
   width: 100%;
