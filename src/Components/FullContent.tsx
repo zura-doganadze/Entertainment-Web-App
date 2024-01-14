@@ -17,7 +17,7 @@ const FullContent = ({ children, movies }: FullContentProps) => {
       ? movies
       : filmNav === "movies"
       ? movies.filter((movie: TMovie) => movie.category === "Movie")
-      : filmNav === "tv-servies"
+      : filmNav === "tv-series"
       ? movies.filter((movie: TMovie) => movie.category === "TV Series")
       : filmNav === "bookmarks"
       ? movies.filter((movie: TMovie) => movie.isBookmarked)
