@@ -38,10 +38,12 @@ export default FullContent;
 
 const Main = styled.div`
   display: flex;
+  position: fixed;
+
 `;
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-right: 40px;
-`;
+`; 
